@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Contact } from './shared.contact.model';
 //import { Contact } from './contact.model';
 
 @Injectable({
@@ -11,6 +12,7 @@ export class SharedService {
   readonly APIUrl = "https://localhost:7281/api";
     
   constructor(private http:HttpClient) { }
+  formData:Contact= new Contact();
 
   getContactList():Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/contact');

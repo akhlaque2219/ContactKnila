@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-addedit-contact',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddeditContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service:SharedService) { }
 
   ngOnInit(): void {
   }

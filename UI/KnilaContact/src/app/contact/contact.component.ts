@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Contact } from '../shared.contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -16,6 +17,11 @@ export class ContactComponent implements OnInit {
   
   ngOnInit():void{
     this.refreshContactList();
+  }
+
+  populateForm(selectedRecord:Contact){
+    this.service.formData = Object.assign({},selectedRecord);
+
   }
 
   refreshContactList(){
